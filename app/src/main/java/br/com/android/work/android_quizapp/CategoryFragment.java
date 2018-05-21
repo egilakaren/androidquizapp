@@ -1,5 +1,6 @@
 package br.com.android.work.android_quizapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -17,9 +17,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import br.com.android.work.android_quizapp.Common.Common;
 import br.com.android.work.android_quizapp.Interface.ItemClickListener;
 import br.com.android.work.android_quizapp.ViewHolder.CategoryViewHolder;
-import br.com.android.work.android_quizapp.model.Category;
+import br.com.android.work.android_quizapp.Model.Category;
 
 public class CategoryFragment extends Fragment {
 
@@ -73,7 +74,10 @@ public class CategoryFragment extends Fragment {
 
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(getActivity(), String.format("%s|%s", adapter.getRef(position).getKey(), model.getName()), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getActivity(), String.format("%s|%s", adapter.getRef(position).getKey(), model.getName()), Toast.LENGTH_SHORT).show();
+                        Intent startGame = new Intent(getActivity(), Start.class);
+                        Common.categoryId = adapter.getRef(position).getKey();
+                        startActivity(startGame);
                     }
                 });
             }

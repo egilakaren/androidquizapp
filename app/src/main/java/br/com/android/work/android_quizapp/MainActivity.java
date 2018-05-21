@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
-import br.com.android.work.android_quizapp.model.Usuario;
+import br.com.android.work.android_quizapp.Model.Usuario;
 
 public class MainActivity extends AppCompatActivity {
     MaterialEditText editNewUser;

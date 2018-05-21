@@ -1,4 +1,4 @@
-package br.com.android.work.android_quizapp.model;
+package br.com.android.work.android_quizapp.Model;
 
 public class Usuario {
     private String username;
