@@ -29,6 +29,6 @@ public class Done extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         question_score = database.getReference("Question_Score");
 
-
+        
     }
 }
