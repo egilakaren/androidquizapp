@@ -20,7 +20,7 @@ import br.com.android.work.android_quizapp.Common.Common;
 public class Playing extends AppCompatActivity implements View.OnClickListener{
 
     final static long INTERVAL = 1000;
-    final static long TIMEOUT = 7000;
+    final static long TIMEOUT = 100000;
     int progressValue = 0;
 
     CountDownTimer mCountDown;
@@ -44,6 +44,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
         txtScore = (TextView) findViewById(R.id.txtScore);
         txtQuestionNum = (TextView) findViewById(R.id.txtTotalQuestion);
         question_text = (TextView) findViewById(R.id.question_text);
+        question_image = (ImageView) findViewById(R.id.question_image);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
@@ -95,8 +96,8 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
                 question_text.setVisibility(View.INVISIBLE);
             } else {
                 question_text.setText(Common.questionList.get(index).getQuestion());
-                question_image.setVisibility(View.VISIBLE);
-                question_text.setVisibility(View.INVISIBLE);
+                question_image.setVisibility(View.INVISIBLE);
+                question_text.setVisibility(View.VISIBLE);
             }
 
             btnA.setText(Common.questionList.get(index).getAnswerA());
@@ -136,6 +137,6 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
                 showQuestion(++index);
             }
         };
-        showQuestion(++index);
+        showQuestion(index);
     }
 }

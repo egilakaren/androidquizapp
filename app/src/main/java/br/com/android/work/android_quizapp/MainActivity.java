@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import br.com.android.work.android_quizapp.Common.Common;
 import br.com.android.work.android_quizapp.Model.Usuario;
 
 public class MainActivity extends AppCompatActivity {
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                         Usuario login = dataSnapshot.child(user).getValue(Usuario.class);
                         if(login.getPassword().equals(pass)) {
                             Intent homeActivity = new Intent(MainActivity.this, Home.class);
+                            Common.currentUser = login;
                             startActivity(homeActivity);
                             finish();
                         } else Toast.makeText(MainActivity.this, "Senha invalida!", Toast.LENGTH_SHORT).show();
