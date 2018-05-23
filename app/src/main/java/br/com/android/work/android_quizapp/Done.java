@@ -61,9 +61,7 @@ public class Done extends AppCompatActivity {
 
             question_score.child(String.format("%s_%s", Common.currentUser.getUsername(), Common.categoryId))
                     .setValue(new QuestionScore(String.format("%s_%s",  Common.currentUser.getUsername(),
-                                                                        Common.categoryId),
-                                                                        Common.currentUser.getUsername(),
-                                                                        String.valueOf(score)));
+                            Common.categoryId), Common.currentUser.getUsername(), String.valueOf(score)));
 
         }
     }

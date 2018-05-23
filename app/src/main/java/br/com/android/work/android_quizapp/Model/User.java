@@ -1,14 +1,14 @@
 package br.com.android.work.android_quizapp.Model;
 
-public class Usuario {
+public class User {
     private String username;
     private String password;
     private String email;
 
-    public Usuario() {
+    public User() {
     }
 
-    public Usuario(String username, String password, String email) {
+    public User(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;

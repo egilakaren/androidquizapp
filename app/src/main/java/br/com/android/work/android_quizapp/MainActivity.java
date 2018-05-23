@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import br.com.android.work.android_quizapp.Common.Common;
-import br.com.android.work.android_quizapp.Model.Usuario;
+import br.com.android.work.android_quizapp.Model.User;
 
 public class MainActivity extends AppCompatActivity {
     MaterialEditText editNewUser;
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(dataSnapshot.child(user).exists()){
                     if(!user.isEmpty()){
-                        Usuario login = dataSnapshot.child(user).getValue(Usuario.class);
+                        User login = dataSnapshot.child(user).getValue(User.class);
                         if(login.getPassword().equals(pass)) {
                             Intent homeActivity = new Intent(MainActivity.this, Home.class);
                             Common.currentUser = login;
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Por favor, informe seu usuario", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(MainActivity.this, "Usuario informado não existe", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "User informado não existe", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -117,18 +117,18 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
-                final Usuario usuario = new Usuario(editNewUser.getText().toString(),
+                final User user = new User(editNewUser.getText().toString(),
                                               editPassword.getText().toString(),
                                               editEmail.getText().toString());
 
                 users.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.child(usuario.getUsername()).exists()) {
-                            Toast.makeText(MainActivity.this, "Usuario ja existe !", Toast.LENGTH_SHORT).show();
+                        if(dataSnapshot.child(user.getUsername()).exists()) {
+                            Toast.makeText(MainActivity.this, "User ja existe !", Toast.LENGTH_SHORT).show();
                         }else{
-                            users.child(usuario.getUsername()).setValue(usuario);
-                            Toast.makeText(MainActivity.this, "Usuario gravado com sucesso", Toast.LENGTH_SHORT).show();
+                            users.child(user.getUsername()).setValue(user);
+                            Toast.makeText(MainActivity.this, "User gravado com sucesso", Toast.LENGTH_SHORT).show();
                         }
                     }
 
