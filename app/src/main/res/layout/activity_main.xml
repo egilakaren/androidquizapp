@@ -75,7 +75,7 @@
 
            <Button
                android:id="@+id/btn_sign_up"
-               android:text="Sign up"
+               android:text="Cadastrar"
                style="@style/Widget.AppCompat.Button.Colored"
                android:layout_weight="1"
                android:layout_width="0dp"
@@ -83,7 +83,7 @@
 
            <Button
                android:id="@+id/btn_sign_in"
-               android:text="Sign in"
+               android:text="Entrar"
                style="@style/Widget.AppCompat.Button.Colored"
                android:layout_weight="1"
                android:layout_width="0dp"

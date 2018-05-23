@@ -13,7 +13,7 @@
 
     <TextView
         android:id="@+id/category_name"
-        android:text="Category Name"
+        android:text="Nome da Categoria"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:gravity="center"

@@ -6,10 +6,10 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DataSnapshot;
@@ -55,9 +55,9 @@ public class RankingFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        myFragment = inflater.inflate(R.layout.fragment_category, container, false);
+        myFragment = inflater.inflate(R.layout.fragment_ranking, container, false);
 
-        rankingList = (RecyclerView) myFragment.findViewById(R.id.rankingList);
+        rankingList = myFragment.findViewById(R.id.rankingList);
         layoutManager = new LinearLayoutManager(getActivity());
         rankingList.setHasFixedSize(true);
 
