@@ -31,9 +31,6 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
     int totalQuestion;
     int correctAnswer;
 
-    FirebaseDatabase database;
-    DatabaseReference questions;
-
     ProgressBar progressBar;
     ImageView question_image;
     Button btnA, btnB, btnC, btnD;
@@ -43,9 +40,6 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing);
-
-        database = FirebaseDatabase.getInstance();
-        questions = database.getReference("Questions");
 
         txtScore = (TextView) findViewById(R.id.txtScore);
         txtQuestionNum = (TextView) findViewById(R.id.txtTotalQuestion);
