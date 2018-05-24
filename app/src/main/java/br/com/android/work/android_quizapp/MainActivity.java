@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Por favor, informe seu usuario", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(MainActivity.this, "User informado não existe", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Usuário informado não existe", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -107,14 +107,14 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.setView(sign_up_layout);
         alertDialog.setIcon(R.drawable.ic_account_circle_black_24dp);
 
-        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+        alertDialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
                 dialogInterface.dismiss();
             }
         });
 
-        alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+        alertDialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
                 final User user = new User(editNewUser.getText().toString(),
@@ -125,10 +125,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if(dataSnapshot.child(user.getUsername()).exists()) {
-                            Toast.makeText(MainActivity.this, "User ja existe !", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Usuário ja existe !", Toast.LENGTH_SHORT).show();
                         }else{
                             users.child(user.getUsername()).setValue(user);
-                            Toast.makeText(MainActivity.this, "User gravado com sucesso", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Usuário gravado com sucesso", Toast.LENGTH_SHORT).show();
                         }
                     }
 
