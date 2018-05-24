@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showSignUpDialog() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
-        alertDialog.setTitle("Sign Up");
+        alertDialog.setTitle("Cadastro");
         alertDialog.setMessage("Por favcr, preencha todos os campos");
 
         LayoutInflater inflater = this.getLayoutInflater();
